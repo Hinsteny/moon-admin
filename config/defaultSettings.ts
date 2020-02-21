@@ -55,7 +55,8 @@ export default {
   menu: {
     locale: true,
   },
-  title: 'Ant Design Pro',
+  title: 'Moon Admin',
+  description: '企业级后台管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
