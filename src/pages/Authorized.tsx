@@ -19,12 +19,13 @@ const AuthComponent: React.FC<AuthComponentProps> = ({
   },
   user,
 }) => {
-  const { currentUser } = user;
+  // const { currentUser } = user;
   const { routes = [] } = route;
-  const isLogin = currentUser && currentUser.name;
+  const loginToken = window.localStorage.getItem("antd-pro-authority");
+  const isLogin = loginToken;
   return (
     <Authorized
-      authority={getRouteAuthority(location.pathname, routes) || ''}
+      authority={getRouteAuthority(location.pathname, routes) || route.authority || ''}
       noMatch={isLogin ? <Redirect to="/exception/403" /> : <Redirect to="/user/login" />}
     >
       {children}
